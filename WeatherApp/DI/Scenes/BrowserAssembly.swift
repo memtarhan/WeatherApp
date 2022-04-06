@@ -12,7 +12,7 @@ import UIKit
 class BrowserAssembly: Assembly {
     func assemble(container: Container) {
         container.register(BrowserViewController.self) { r in
-            let viewController = BrowserViewControllerImpl(nibName: "BrowserViewController", bundle: nil)
+            let viewController = BrowserViewControllerImpl()
             let presenter = r.resolve(BrowserPresenter.self)!
 
             presenter.view = viewController

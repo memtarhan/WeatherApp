@@ -23,7 +23,6 @@
 		437D03D027FDA79C0002B3B4 /* WeatherAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437D03CF27FDA79C0002B3B4 /* WeatherAssembly.swift */; };
 		437D03D827FDA7D40002B3B4 /* BrowserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437D03D227FDA7D40002B3B4 /* BrowserPresenter.swift */; };
 		437D03DA27FDA7D40002B3B4 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437D03D427FDA7D40002B3B4 /* BrowserViewController.swift */; };
-		437D03DD27FDA7D40002B3B4 /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437D03D727FDA7D40002B3B4 /* BrowserViewController.xib */; };
 		437D03DF27FDA7EF0002B3B4 /* BrowserAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437D03DE27FDA7EF0002B3B4 /* BrowserAssembly.swift */; };
 		437D03E827FDAC950002B3B4 /* APICallable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437D03E727FDAC950002B3B4 /* APICallable.swift */; };
 		437D03EA27FDAD820002B3B4 /* WeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437D03E927FDAD820002B3B4 /* WeatherError.swift */; };
@@ -81,7 +80,6 @@
 		437D03CF27FDA79C0002B3B4 /* WeatherAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAssembly.swift; sourceTree = "<group>"; };
 		437D03D227FDA7D40002B3B4 /* BrowserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPresenter.swift; sourceTree = "<group>"; };
 		437D03D427FDA7D40002B3B4 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
-		437D03D727FDA7D40002B3B4 /* BrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowserViewController.xib; sourceTree = "<group>"; };
 		437D03DE27FDA7EF0002B3B4 /* BrowserAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserAssembly.swift; sourceTree = "<group>"; };
 		437D03E727FDAC950002B3B4 /* APICallable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallable.swift; sourceTree = "<group>"; };
 		437D03E927FDAD820002B3B4 /* WeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherError.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			children = (
 				437D03D227FDA7D40002B3B4 /* BrowserPresenter.swift */,
 				437D03D427FDA7D40002B3B4 /* BrowserViewController.swift */,
-				437D03D727FDA7D40002B3B4 /* BrowserViewController.xib */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -399,7 +396,6 @@
 			files = (
 				437D039A27FDA5D70002B3B4 /* LaunchScreen.storyboard in Resources */,
 				437D03F527FDBBA80002B3B4 /* DailyTableViewCell.xib in Resources */,
-				437D03DD27FDA7D40002B3B4 /* BrowserViewController.xib in Resources */,
 				437D03CE27FDA7610002B3B4 /* WeatherViewController.xib in Resources */,
 				437D039727FDA5D70002B3B4 /* Assets.xcassets in Resources */,
 			);
