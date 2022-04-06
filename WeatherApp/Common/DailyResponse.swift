@@ -17,7 +17,7 @@ struct DailyResponse: Codable {
 // MARK: - Daily
 
 struct Daily: Codable {
-    let dt, sunrise, sunset, moonrise: Int?
+    let date, sunrise, sunset, moonrise: Int?
     let moonset: Int?
     let moonPhase: Double?
     let temp: Temp?
@@ -31,7 +31,8 @@ struct Daily: Codable {
     let pop, uvi, rain: Double?
 
     enum CodingKeys: String, CodingKey {
-        case dt, sunrise, sunset, moonrise, moonset
+        case date = "dt"
+        case sunrise, sunset, moonrise, moonset
         case moonPhase = "moon_phase"
         case temp
         case feelsLike = "feels_like"
