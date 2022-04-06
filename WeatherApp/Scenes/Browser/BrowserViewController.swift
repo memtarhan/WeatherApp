@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 protocol BrowserViewController: AnyObject {
     var presenter: BrowserPresenter? { get set }
@@ -15,20 +16,37 @@ protocol BrowserViewController: AnyObject {
 class BrowserViewControllerImpl: UIViewController {
     var presenter: BrowserPresenter?
 
+    var webView: WKWebView!
+
+    override func loadView() {
+        webView = WKWebView()
+        webView.navigationDelegate = self
+        view = webView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        localize()
-    }
-
     private func setup() {
+        let url = URL(string: "https://www.c-and-a.com/eu/en/")!
+        webView.load(URLRequest(url: url))
+        webView.allowsBackForwardNavigationGestures = true
+    }
+}
+
+// MARK: - WKNavigationDelegate
+
+extension BrowserViewControllerImpl: WKNavigationDelegate {
+    /// - When a navigation starts
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        displayLoadingIndicator()
     }
 
-    private func localize() {
+    /// - When a navigation finishes
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        removeLoadingIndicator()
     }
 }
 
