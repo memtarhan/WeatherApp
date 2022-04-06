@@ -11,6 +11,8 @@ import WebKit
 
 protocol BrowserViewController: AnyObject {
     var presenter: BrowserPresenter? { get set }
+
+    func displayWebPage(with url: URL)
 }
 
 class BrowserViewControllerImpl: UIViewController {
@@ -30,9 +32,7 @@ class BrowserViewControllerImpl: UIViewController {
     }
 
     private func setup() {
-        let url = URL(string: "https://www.c-and-a.com/eu/en/")!
-        webView.load(URLRequest(url: url))
-        webView.allowsBackForwardNavigationGestures = true
+        presenter?.present()
     }
 }
 
@@ -53,4 +53,10 @@ extension BrowserViewControllerImpl: WKNavigationDelegate {
 // MARK: - BrowserViewController
 
 extension BrowserViewControllerImpl: BrowserViewController {
+    func displayWebPage(with url: URL) {
+        DispatchQueue.main.async {
+            self.webView.load(URLRequest(url: url))
+            self.webView.allowsBackForwardNavigationGestures = true
+        }
+    }
 }

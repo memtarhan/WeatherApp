@@ -11,7 +11,6 @@ import UIKit
 protocol WeatherPresenter: AnyObject {
     var view: WeatherViewController? { get set }
     var interactor: WeatherInteractor? { get set }
-    var router: WeatherRouter? { get set }
 
     func present(for city: String)
 }
@@ -19,7 +18,6 @@ protocol WeatherPresenter: AnyObject {
 class WeatherPresenterImpl: WeatherPresenter {
     var view: WeatherViewController?
     var interactor: WeatherInteractor?
-    var router: WeatherRouter?
 
     func present(for city: String) {
         interactor?.fetchCurrent(for: city, { result in

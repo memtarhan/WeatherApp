@@ -42,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             WeatherAssembly(),
 
         ])
-        assembler?.apply(assembly: ViewControllerFactoryAssembly(assembler: assembler!))
     }
 
     /// - Initializing UI w/ initial view controller

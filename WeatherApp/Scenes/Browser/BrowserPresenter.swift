@@ -10,12 +10,17 @@ import UIKit
 
 protocol BrowserPresenter: AnyObject {
     var view: BrowserViewController? { get set }
-    var interactor: BrowserInteractor? { get set }
-    var router: BrowserRouter? { get set }
+    
+    func present()
 }
 
 class BrowserPresenterImpl: BrowserPresenter {
     var view: BrowserViewController?
-    var interactor: BrowserInteractor?
-    var router: BrowserRouter?
+    
+    private let url = "https://www.c-and-a.com/eu/en/"
+    
+    func present() {
+        guard let url = URL(string: url) else { return }
+        view?.displayWebPage(with: url)
+    }
 }

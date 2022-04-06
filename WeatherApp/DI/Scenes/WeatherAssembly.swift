@@ -15,13 +15,10 @@ class WeatherAssembly: Assembly {
             let viewController = WeatherViewControllerImpl(nibName: "WeatherViewController", bundle: nil)
             let presenter = r.resolve(WeatherPresenter.self)!
             let interactor = r.resolve(WeatherInteractor.self)!
-            let router = r.resolve(WeatherRouter.self)!
 
             presenter.view = viewController
-            presenter.router = router
             presenter.interactor = interactor
             viewController.presenter = presenter
-            router.view = viewController
 
             return viewController
         }
@@ -32,10 +29,6 @@ class WeatherAssembly: Assembly {
 
         container.register(WeatherInteractor.self) { _ in
             WeatherInteractorImpl()
-        }
-
-        container.register(WeatherRouter.self) { r in
-            WeatherRouterImpl(factory: r.resolve(ViewControllerFactory.self)!)
         }
     }
 }
