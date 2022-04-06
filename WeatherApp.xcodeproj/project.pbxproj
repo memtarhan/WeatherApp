@@ -136,6 +136,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		433FF3F127FDF59E00731BA9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				433FF3EF27FDF4EB00731BA9 /* Date+.swift */,
+				433FF3ED27FDF29E00731BA9 /* UIViewController+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		433FF3F227FDF5D600731BA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				437D03ED27FDB3260002B3B4 /* DailyResponse.swift */,
+				437D03E927FDAD820002B3B4 /* WeatherError.swift */,
+				437D03EB27FDAE070002B3B4 /* WeatherResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		437D038127FDA5D50002B3B4 = {
 			isa = PBXGroup;
 			children = (
@@ -163,11 +182,13 @@
 			children = (
 				437D03BD27FDA68B0002B3B4 /* DI */,
 				437D03C127FDA7450002B3B4 /* Scenes */,
+				433FF3F227FDF5D600731BA9 /* Models */,
+				433FF3F127FDF59E00731BA9 /* Extensions */,
 				437D03E327FDA8240002B3B4 /* Common */,
 				437D038D27FDA5D50002B3B4 /* AppDelegate.swift */,
 				437D039627FDA5D70002B3B4 /* Assets.xcassets */,
-				437D039827FDA5D70002B3B4 /* LaunchScreen.storyboard */,
 				437D039B27FDA5D70002B3B4 /* Info.plist */,
+				437D039827FDA5D70002B3B4 /* LaunchScreen.storyboard */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -243,11 +264,6 @@
 			children = (
 				437D03E727FDAC950002B3B4 /* APICallable.swift */,
 				437D03EF27FDB8150002B3B4 /* CardView.swift */,
-				437D03ED27FDB3260002B3B4 /* DailyResponse.swift */,
-				433FF3ED27FDF29E00731BA9 /* UIViewController+.swift */,
-				437D03E927FDAD820002B3B4 /* WeatherError.swift */,
-				437D03EB27FDAE070002B3B4 /* WeatherResponse.swift */,
-				433FF3EF27FDF4EB00731BA9 /* Date+.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";

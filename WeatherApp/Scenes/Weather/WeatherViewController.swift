@@ -51,6 +51,8 @@ class WeatherViewControllerImpl: UIViewController {
         dailyWeatherTableView.dataSource = self
 
         presenter?.present(for: "Dusseldorf")
+
+        displayLoadingIndicator()
     }
 }
 
@@ -61,12 +63,12 @@ extension WeatherViewControllerImpl: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.cellReuseIdentifier) as! DailyTableViewCell
-        
+
         let dayData = daily[indexPath.row]
         cell.dayLabel.text = dayData.day
         cell.conditionLabel.text = dayData.condition
         cell.temperatureLabel.text = dayData.temperature
-        
+
         return cell
     }
 }
@@ -85,6 +87,8 @@ extension WeatherViewControllerImpl: WeatherViewController {
             UIView.animate(withDuration: 1.0) {
                 self.currentWeatherContainerView.alpha = 1.0
             }
+            
+            self.removeLoadingIndicator()
         }
     }
 

@@ -22,6 +22,7 @@ extension UIViewController {
                                                                 width: height,
                                                                 height: height))
             activityIndicatorView.style = .large
+            activityIndicatorView.color = .systemGreen
             activityIndicatorView.center = self?.view.convert(self?.view.center ?? CGPoint(x: 0, y: 0), from: self?.view.superview) ?? CGPoint(x: 0, y: 0)
             activityIndicatorView.startAnimating()
             container.addSubview(activityIndicatorView)

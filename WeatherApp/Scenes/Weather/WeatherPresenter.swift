@@ -77,7 +77,9 @@ class WeatherPresenterImpl: WeatherPresenter {
     }
 
     private func updateDaily(_ daily: DailyResponse) {
-        let viewModels = daily.daily?.map { dailyData -> WeatherEntity.Daily.ViewModel in
+        guard let data = daily.daily?[1 ... 5] else { return }
+        let dailyData = Array(data)
+        let viewModels = dailyData.map { dailyData -> WeatherEntity.Daily.ViewModel in
             let date = Date(timeIntervalSince1970: TimeInterval(dailyData.date ?? 0))
 
             var conditionString = "No condition"
@@ -92,16 +94,8 @@ class WeatherPresenterImpl: WeatherPresenter {
                                                           condition: conditionString,
                                                           temperature: temperatureString)
             return viewModel
-        } ?? []
+        } 
 
         view?.display(viewModels)
-    }
-}
-
-extension Date {
-    var asDay: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE"
-        return dateFormatter.string(from: self)
     }
 }
